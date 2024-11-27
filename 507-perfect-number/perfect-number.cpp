@@ -3,7 +3,7 @@
 class Solution {
 public:
     bool checkPerfectNumber(int n) {
-        if (n <= 1) return false; // Perfect numbers are greater than 1
+        if (n <= 1) return false; 
         
         int sum = 1; // 1 is a proper divisor of any number greater than 1
         int sqrt_n = sqrt(n);
