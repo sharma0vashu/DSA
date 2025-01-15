@@ -1,22 +1,21 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        int b;
-        int c=x;
-        double rev=0;
-        if(x<0){
+        long long n=x;
+        if(n<0){
             return false;
         }
-        while(x>0){
-            b=x%10;
-            rev = (rev*10)+b;
-            x=x/10;
+        
+    long long num=0;
+        while(n>0){
+          int a=n%10;
+          num=num*10+a;  
+          n=n/10;
         }
-        if(c==rev){
+        if(num==x){
             return true;
         }
-        else {
-            return false;
-        }
+        return false;
+        
     }
 };
