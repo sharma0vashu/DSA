@@ -11,7 +11,7 @@ public:
                 ans[0]=mid;
                 end=mid-1;
             }
-            else if(nums[mid]>=tar){
+            else if(nums[mid]>tar){
                end=mid-1;
             }
             else{
@@ -27,7 +27,7 @@ public:
                 ans[1]=mid;
                beg=mid+1;
             }
-            else if(nums[mid]>=tar){
+            else if(nums[mid]>tar){
                end=mid-1;
             }
             else{
