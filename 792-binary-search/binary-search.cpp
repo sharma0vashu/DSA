@@ -11,7 +11,7 @@ public:
             if(nums[mid]==tar){
                 return mid;
             }
-            else if(nums[mid]>=tar){
+            else if(nums[mid]>tar){
                end=mid-1;
             }
             else{
