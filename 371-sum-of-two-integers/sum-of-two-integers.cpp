@@ -1,6 +1,12 @@
 class Solution {
 public:
     int getSum(int a, int b) {
-        return a+b;
+        int carry;
+        while(b!=0){
+            carry=(a&b)<<1;
+            a=a^b;
+            b=carry;
+        }
+        return a;
     }
 };
