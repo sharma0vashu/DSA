@@ -1,13 +1,10 @@
 class Solution {
 public:
     string removeOccurrences(string s, string part) {
-        int n=s.length();
-        int m=part.length();
-        while(n>0 && s.find(part)<n){
-            int a=s.find(part);
-            int b=a+m;
-            s.erase(a,m);
-        }  
-        return s;
-          }
+      size_t pos;
+    while ((pos = s.find(part)) != std::string::npos) { // Find leftmost occurrence
+        s.erase(pos, part.length()); // Remove the found occurrence
+    }
+    return s;
+    }
 };
