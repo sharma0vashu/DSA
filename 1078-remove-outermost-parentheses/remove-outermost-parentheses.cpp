@@ -1,4 +1,4 @@
-class Solution {
+class Solution {//solution in O(1)
 public:
     string removeOuterParentheses(string s) {
         int n=s.length();
