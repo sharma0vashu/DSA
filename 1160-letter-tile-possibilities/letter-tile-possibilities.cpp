@@ -8,13 +8,8 @@ public:
         int total = 0;
         for (auto& entry : freq) {
             if (entry.second > 0) {
-                // Choose the letter
                 entry.second--;
-
-                // Count this sequence + recursively explore further
                 total += 1 + backtrack(freq);
-
-                // Backtrack: Restore letter count
                 entry.second++;
             }
         }
