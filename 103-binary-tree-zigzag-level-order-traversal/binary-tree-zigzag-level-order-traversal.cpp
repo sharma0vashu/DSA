@@ -12,8 +12,9 @@
 class Solution {
 public:
     vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+        //using 102 level order traversal
        vector<vector<int>> ans;
-       bool is=true;
+       bool is=true; //flag
         if(root==nullptr) return ans;
        queue<TreeNode*> q;
        q.push(root);
@@ -32,7 +33,7 @@ public:
          
         }
         ans.push_back(level);
-        is=!is;
+        is=!is; //only adding flag to it
         // if(is==true) is=false;
         // else{
         //     is=true;
