@@ -11,21 +11,16 @@
  */
 class Solution {
 public:
-bool isSameTree(TreeNode* p, TreeNode* q) {
-        if(p==nullptr && q==nullptr) return true;
-        if(p==nullptr || q==nullptr) return false;
-         
+     bool isSameTree(TreeNode* p, TreeNode* q) {
+        if(p==nullptr && q==nullptr ) return true; //both are null
+        if(p==nullptr || q==nullptr)  return false;// one is null
        
-          bool left= isSameTree(p->left,q->left);
-          bool right= isSameTree(p->right,q->right);
-
-          return left && right && p->val==q->val;
-
+       if(p->val!=q->val) return false;// checking equal val
+        return isSameTree(p->left,q->left) && isSameTree(p->right,q->right); // recursion
     }
     bool isSubtree(TreeNode* root, TreeNode* subRoot) {
-        if(root==nullptr || subRoot==nullptr ) return root==subRoot;
-        if(root->val==subRoot->val && isSameTree(root,subRoot)) return true;
-
- return isSubtree(root->left,subRoot) ||isSubtree(root->right,subRoot);
+        if(root==nullptr) return false;
+        if(isSameTree(root,subRoot)) return true;
+        return isSubtree(root->left,subRoot) || isSubtree(root->right,subRoot);
     }
 };
