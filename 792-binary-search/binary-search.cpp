@@ -1,28 +1,18 @@
 class Solution {
 public:
-    int binarysearch(vector<int>& arr, int target,int start,int end){ if(start<=end){
-        int mid=(start+end)/2;
-         if(arr[mid]==target) return mid;
-         else{
-            if(arr[mid]>target){return binarysearch(arr, target,start,mid-1);
-                
-            }
-            else{
-                return binarysearch(arr, target,mid+1,end);
-            }
-         }
-    }
-        
-     else{
-        return -1;
-     }
+    int bs(vector<int> &nums, int s, int e, int target) {
+        if (s > e) return -1;   // base case
 
-    }
-    int search(vector<int>& arr, int target) {
-        int st=0;
-        int end=arr.size()-1;
-      int res=  binarysearch(arr,target,st,end);
+        int mid = s + (e - s) / 2;
 
-    return res;
+        if (nums[mid] == target) return mid;
+        else if (nums[mid] > target)
+            return bs(nums, s, mid - 1, target);   
+        else
+            return bs(nums, mid + 1, e, target);   
+    }
+
+    int search(vector<int>& nums, int target) {
+        return bs(nums, 0, nums.size() - 1, target);
     }
 };
