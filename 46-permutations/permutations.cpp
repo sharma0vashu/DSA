@@ -8,7 +8,7 @@ public:
         for (int i = pos; i < nums.size(); i++) {
             swap(nums[i], nums[pos]);
             prmu(nums, ans, pos + 1);
-            swap(nums[i], nums[pos]); // backtrack
+            swap(nums[i], nums[pos]); 
         }
     }
 
